@@ -132,6 +132,9 @@ Wordscramble.prototype.number = function(number) {
  */
 
 Wordscramble.prototype.object = function(object) {
+    if(object === null) {
+        return null;
+    }
     let copy = Object.assign({}, object);
     Object.keys(copy).forEach(key => copy[key] = this.scramble(copy[key]));
     return copy;
